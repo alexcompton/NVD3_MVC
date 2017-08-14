@@ -1,0 +1,78 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<h3>Test Chart</h3>
+
+<style>
+    #chart svg {
+        height: 400px;
+    }
+</style>
+
+<div id="chart">
+    <svg></svg>
+</div>
+
+<script>
+
+    /*These lines are all chart setup.  Pick and choose which chart features you want to utilize. */
+    nv.addGraph(function () {
+        var chart = nv.models.lineChart()
+            .useInteractiveGuideline(true)
+            ;
+
+        chart.xAxis
+            .axisLabel('Time (ms)')
+            .tickFormat(d3.format(',r'))
+            ;
+
+        chart.yAxis
+            .axisLabel('Voltage (v)')
+            .tickFormat(d3.format('.02f'))
+            ;
+
+        chart.lines.dispatch.on('elementClick', function (e) {
+            alert("You've clicked on a line");
+            console.log(e);
+        });
+
+        d3.select('#chart svg')
+            .datum(sinAndCos())
+            .transition().duration(500)
+            .call(chart)
+            ;
+
+        nv.utils.windowResize(chart.update);
+
+        return chart;
+    });
+
+    function sinAndCos() {
+        var sin = [],
+            cos = [],
+            rand = [];
+
+        for (var i = 0; i < 100; i++) {
+            sin.push({ x: i, y: Math.sin(i / 10) });
+            cos.push({ x: i, y: .5 * Math.cos(i / 10) });
+            rand.push({ x: i, y: Math.random() * 2 - 1 });
+        }
+
+        return [
+            {
+                values: sin,
+                key: 'Sine Wave'
+            },
+            {
+                values: cos,
+                key: 'Cosine Wave'
+            },
+            {
+                values: rand,
+                key: 'Random Wave'
+            }
+        ];
+    }
+
+</script>
