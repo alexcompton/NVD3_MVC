@@ -62,6 +62,5 @@ C:\Users\alexc\Desktop\NvD3Mvc\NvD3Mvc\bin\Microsoft.AI.DependencyCollector.xml
 C:\Users\alexc\Desktop\NvD3Mvc\NvD3Mvc\bin\Microsoft.AI.ServerTelemetryChannel.xml
 C:\Users\alexc\Desktop\NvD3Mvc\NvD3Mvc\bin\Microsoft.AI.WindowsServer.xml
 C:\Users\alexc\Desktop\NvD3Mvc\NvD3Mvc\bin\Microsoft.AI.Web.xml
-C:\Users\alexc\Desktop\NvD3Mvc\NvD3Mvc\obj\Debug\NvD3Mvc.csprojResolveAssemblyReference.cache
 C:\Users\alexc\Desktop\NvD3Mvc\NvD3Mvc\obj\Debug\NvD3Mvc.dll
 C:\Users\alexc\Desktop\NvD3Mvc\NvD3Mvc\obj\Debug\NvD3Mvc.pdb
